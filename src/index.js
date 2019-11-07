@@ -13,7 +13,7 @@ const makeRequest = async () => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 const loadNews = async (e) => {
   const selectedChannel = e.target.closest('.channel');
@@ -29,9 +29,9 @@ const loadNews = async (e) => {
       console.log(error);
     }
   }
-}
+};
 
 const loadButton = document.getElementById('makeRequest');
 loadButton.addEventListener('click', makeRequest);
 
-main.addEventListener('click',loadNews);
+main.addEventListener('click', loadNews);

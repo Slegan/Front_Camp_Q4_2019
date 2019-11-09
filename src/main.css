@@ -77,3 +77,33 @@
 .link-to-official {
   width: 120px;
 }
+
+.notification-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: yellowgreen;
+  width: 700px;
+  height: 400px;
+  z-index: 1;
+}
+
+.notification-popup.hide {
+  display: none;
+}
+
+.notification-popup_header{
+  height: 60px;
+  font-size: 40px;
+  line-height: 60px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid darkgreen;
+}
+
+.notification-popup_body {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 30px 50px;
+}

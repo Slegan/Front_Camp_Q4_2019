@@ -1,37 +1,30 @@
-import jsonHandler from './js/jsonHandler';
-import constants from './js/constants';
+import RequestCreator from './js/requestCreator';
+import logRequest from './js/logRequest';
 import './main.css';
 
 const main = document.getElementById('main');
+const loadButton = document.getElementById('loadChannels');
+const errorButton = document.getElementById('makeWrongRequest');
 
-const makeRequest = async () => {
-  try {
-    const response = await fetch(`https://newsapi.org/v2/sources?language=en&apiKey=${constants.apiKey}`);
-    const myJson = await response.json();
-
-    jsonHandler(myJson, main);
-  } catch (error) {
-    console.log(error);
-  }
+const makeWrongRequest = () => {
+  logRequest('wrong', [main]);
 };
 
-const loadNews = async (e) => {
+const loadChannels = () => {
+  logRequest('loadChannels', [main]);
+};
+
+const loadNews = (e) => {
   const selectedChannel = e.target.closest('.channel');
 
   if (selectedChannel) {
     const selectedChannelId = selectedChannel.getAttribute('data-url-attribute');
-    try {
-      const response = await fetch(`https://newsapi.org/v2/everything?sources=${selectedChannelId}&pageSize=100&apiKey=${constants.apiKey}`);
-      const myJson = await response.json();
-
-      jsonHandler(myJson, main);
-    } catch (error) {
-      console.log(error);
-    }
+    logRequest('loadNews', [main, selectedChannelId]);
   }
 };
 
-const loadButton = document.getElementById('makeRequest');
-loadButton.addEventListener('click', makeRequest);
+const proxy = new Proxy(RequestCreator, logRequest);
 
+loadButton.addEventListener('click', loadChannels);
+errorButton.addEventListener('click', makeWrongRequest);
 main.addEventListener('click', loadNews);

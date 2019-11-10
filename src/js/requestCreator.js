@@ -5,7 +5,11 @@ import jsonHandler from './jsonHandler';
 let NotificationPopup;
 
 const showError = (error) => {
-  import(/* webpackChunkName: "NotificationPopup" */ './notificationPop')
+  import(
+    /* webpackChunkName: "NotificationPopup" */ 
+    /* webpackMode: "eager" */
+    './notificationPop'
+  )
     .then((module) => {
       NotificationPopup = module.default.getInstance();
       NotificationPopup.showPopup(error);

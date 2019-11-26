@@ -17,4 +17,4 @@ export default (type, params) => {
     default:
       break;
   }
-}
+};

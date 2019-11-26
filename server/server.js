@@ -1,5 +1,5 @@
 const express = require('express');
-const { serverPort, host} = require('./config.json');
+const { serverPort, host } = require('./config.json');
 const router = require('./router.js');
 const errorHandler = require('./errorHandler.js');
 
@@ -10,6 +10,5 @@ server.use(router);
 server.use(errorHandler);
 
 server.listen(serverPort, () => {
-  console.log(`Server listening at ${serverPort}`);
+  console.log(`Server listening at ${host}:${serverPort}`);
 });
-

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const data = require('./mockData.js');
 const UrlController = require('./controllers.js');
 
 router.get('/', UrlController.index.bind(UrlController));

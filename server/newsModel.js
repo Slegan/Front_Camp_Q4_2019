@@ -50,6 +50,6 @@ const NewsSchema = new Schema ({
 //   content: String
 // })
 
-const News = mongoose.model('news', NewsSchema, 'news');
+const News = mongoose.model('news2', NewsSchema, 'news2');
 
 module.exports = News;

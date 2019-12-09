@@ -1,4 +1,5 @@
 const data = require('./mockData.js');
+const NewsService = require('./service.js');
 
 class UrlController {
   index(req, res, next) {
@@ -10,9 +11,12 @@ class UrlController {
     }
   }
 
-  getNews(req, res, next) {
+  async getNews(req, res, next) {
     try {
-      res.json(data);
+      console.log(NewsService, 'before news page data was submit');
+      const allNews = await NewsService.getAll();
+      console.log(allNews, 'lalalala page data was submit');
+      res.json(allNews);
       console.log('news page data was submit');
     } catch (error) {
       next(error);

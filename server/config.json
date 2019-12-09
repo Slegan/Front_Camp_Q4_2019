@@ -1,4 +1,9 @@
 {
   "serverPort": "4000",
-  "host": "localhost"
+  "host": "localhost",
+  "db":{
+    "name": "news2",
+    "host": "localhost",
+    "port": 27017
+  }
 }

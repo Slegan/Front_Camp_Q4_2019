@@ -2,8 +2,11 @@ const express = require('express');
 const { serverPort, host } = require('./config.json');
 const router = require('./router.js');
 const errorHandler = require('./errorHandler.js');
+const setUpConnection = require('./dataBaseConnection');
 
 const server = express();
+
+setUpConnection();
 
 server.use(router);
 

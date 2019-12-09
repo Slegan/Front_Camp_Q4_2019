@@ -2,8 +2,8 @@ const mockData = {
   articles: [
     {
     "source": {
-    "id": null,
-    "name": "Marketwatch.com"
+      "id": null,
+      "name": "Marketwatch.com"
     },
     "author": "Shawn Langlois",
     "title": "Elon Musk doesn’t back down after Ford challenges Tesla to ‘apples to apples’ tug-of-war rematch - MarketWatch",
@@ -15,8 +15,8 @@ const mockData = {
     },
     {
     "source": {
-    "id": "cnbc",
-    "name": "CNBC"
+      "id": "cnbc",
+      "name": "CNBC"
     },
     "author": "Fred Imbert",
     "title": "US consumer confidence falls for fourth consecutive month - CNBC",

@@ -2,7 +2,7 @@
   "serverPort": "4000",
   "host": "localhost",
   "db":{
-    "name": "news2",
+    "name": "frontcamp",
     "host": "localhost",
     "port": 27017
   }

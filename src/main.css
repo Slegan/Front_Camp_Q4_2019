@@ -1,1 +1,3 @@
 @import './components/Header/_Header.component.css';
+@import './components/ToggleButtons/_ToggleButtons.component.css';
+@import './components/NavigatePanel/_NavigatePanel.component.css';

@@ -1,23 +1,25 @@
 import React from 'react';
 import ToggleButtons from '../ToggleButtons/ToggleButtons.component';
+import GenreLabel from '../GenreLabel/GenreLabel.component';
 
 class NavigatePanel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       toggleButtons: {
-        title: 'Search by',
-        leftButton: 'Title',
-        rightButton: 'Gengre',
+        title: 'Sort by',
+        leftButton: 'Release date',
+        rightButton: 'Rating',
       },
     };
   }
 
   render() {
     return (
-      <header className="navigate-panel">
+      <section className="navigate-panel">
+        <GenreLabel />
         <ToggleButtons toggleButtons={this.state.toggleButtons} />
-      </header>
+      </section>
     );
   }
 }

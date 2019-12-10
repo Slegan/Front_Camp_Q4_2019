@@ -18,7 +18,7 @@ class NavigatePanel extends React.Component {
     return (
       <section className="navigate-panel">
         <GenreLabel />
-        <ToggleButtons toggleButtons={this.state.toggleButtons} />
+        <ToggleButtons buttonsProp={this.state.toggleButtons} />
       </section>
     );
   }

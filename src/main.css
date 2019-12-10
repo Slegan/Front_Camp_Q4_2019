@@ -3,3 +3,8 @@
 @import './components/NavigatePanel/_NavigatePanel.component.css';
 @import './components/GenreLabel/_GenreLabel.component.css';
 @import './components/FilmsPreviewBox/_FilmsPreviewBox.component.css';
+@import './components/FilmPreviewCard/_FilmPreviewCard.component.css';
+
+.hide {
+  display: none;
+}

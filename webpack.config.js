@@ -16,10 +16,17 @@ module.exports = {
         loader: 'style-loader!css-loader',
         exclude: [/node_modules/, /build/],
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader',
+          options: { name: '[name].[ext]', outputPath: 'images/' },
+        }],
+      },
     ],
   },
   resolve: {
-    extensions: ['.js','.jsx', '.css'],
+    extensions: ['.js', '.jsx', '.css'],
   },
   devtool: 'source-map',
   output: {

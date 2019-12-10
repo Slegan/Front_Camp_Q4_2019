@@ -20,7 +20,7 @@ class Header extends React.Component {
     if (this.props.match.params && this.props.match.params.id) {
       header = <section className="chosen-film">
         <div className="metabar">
-          <Link to={'/film:123'}>
+          <Link to={'/'}>
             <button className="back-to-search">Back to search</button>
           </Link>
         </div>
@@ -50,7 +50,7 @@ class Header extends React.Component {
             className="header_search-input"
             placeholder="Search"
           />
-          <Link to={'/'}>
+          <Link to={'/film:123'}>
             <button
               type="button"
               className="header_search-button"

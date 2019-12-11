@@ -1,9 +1,10 @@
-@import './components/Header/_Header.component.css';
 @import './components/ToggleButtons/_ToggleButtons.component.css';
 @import './components/NavigatePanel/_NavigatePanel.component.css';
 @import './components/GenreLabel/_GenreLabel.component.css';
 @import './components/FilmsPreviewBox/_FilmsPreviewBox.component.css';
 @import './components/FilmPreviewCard/_FilmPreviewCard.component.css';
+@import './components/SearchBox/_SearchBox.component.css';
+@import './components/FilmDescription/_FilmDescription.component.css';
 
 .hide {
   display: none;

@@ -4,19 +4,20 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import store from './store';
-import Header from './components/Header/Header.component';
 import NavigatePanel from './components/NavigatePanel/NavigatePanel.component';
 import FilmsPreviewBox from './components/FilmsPreviewBox/FilmsPreviewBox.component';
+import SearchBox from './components/SearchBox/SearchBox.component';
+import FilmDescription from './components/FilmDescription/FilmDescription.component';
 import './main.css';
 
 const pathArray = {
   '/': [
-    Header,
+    SearchBox,
     NavigatePanel,
     FilmsPreviewBox,
   ],
   '/film:id': [
-    Header,
+    FilmDescription,
     NavigatePanel,
     FilmsPreviewBox,
   ],

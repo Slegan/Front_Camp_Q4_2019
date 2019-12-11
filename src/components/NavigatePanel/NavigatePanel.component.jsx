@@ -1,6 +1,7 @@
 import React from 'react';
 import ToggleButtons from '../ToggleButtons/ToggleButtons.component';
 import GenreLabel from '../GenreLabel/GenreLabel.component';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.component';
 
 class NavigatePanel extends React.Component {
   constructor(props) {
@@ -16,10 +17,12 @@ class NavigatePanel extends React.Component {
 
   render() {
     return (
-      <section className="navigate-panel">
-        <GenreLabel />
-        <ToggleButtons buttonsProp={this.state.toggleButtons} />
-      </section>
+      <ErrorBoundary>
+        <section className="navigate-panel">
+          <GenreLabel />
+          <ToggleButtons buttonsProp={this.state.toggleButtons} />
+        </section>
+      </ErrorBoundary>
     );
   }
 }

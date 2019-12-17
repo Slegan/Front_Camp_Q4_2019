@@ -16,7 +16,22 @@ const pathArray = {
     NavigatePanel,
     FilmsPreviewBox,
   ],
-  '/film:id': [
+  '/sortByRelease': [
+    SearchBox,
+    NavigatePanel,
+    FilmsPreviewBox,
+  ],
+  '/sortByRating': [
+    SearchBox,
+    NavigatePanel,
+    FilmsPreviewBox,
+  ],
+  '/search/:searchquery': [
+    SearchBox,
+    NavigatePanel,
+    FilmsPreviewBox,
+  ],
+  '/film/:id': [
     FilmDescription,
     NavigatePanel,
     FilmsPreviewBox,

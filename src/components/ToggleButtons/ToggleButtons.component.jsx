@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class ToggleButtons extends React.PureComponent {
 
@@ -11,13 +10,19 @@ class ToggleButtons extends React.PureComponent {
         <span>{title}</span>
         <button
           type="button"
-          className="radio-button radio-button_left radio-button--active"
+          onClick={this.props.leftButtonAction}
+          className={
+            `radio-button radio-button_left
+            ${ this.props.activeMarker ? 'radio-button--active' : '' }`}
         >
           {leftButton}
         </button>
         <button
           type="button"
-          className="radio-button radio-button_right"
+          onClick={this.props.rightButtonAction}
+          className={
+            `radio-button radio-button_right
+            ${ this.props.activeMarker ? '' : 'radio-button--active' }`}
         >
           {rightButton}
         </button>
@@ -25,12 +30,5 @@ class ToggleButtons extends React.PureComponent {
     );
   }
 }
-
-// ToggleButtons.prototype = {
-//   // toggleButtons: PropTypes.object,
-//   // title: PropTypes.string,
-//   // leftButton: PropTypes.string,
-//   // rightButton: PropTypes.string,
-// };
 
 export default ToggleButtons;

@@ -5,6 +5,7 @@
 @import './components/FilmPreviewCard/_FilmPreviewCard.component.css';
 @import './components/SearchBox/_SearchBox.component.css';
 @import './components/FilmDescription/_FilmDescription.component.css';
+@import './components/EmptyPaga/_EmptyPaga.component.css';
 
 .hide {
   display: none;

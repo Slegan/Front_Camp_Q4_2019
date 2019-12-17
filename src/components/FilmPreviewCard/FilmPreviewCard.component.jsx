@@ -1,24 +1,38 @@
 import React from 'react';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.component';
+import { Link } from 'react-router-dom';
 
-class FilmPreviewCard extends React.Component {
+class FilmPreviewCard extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+
+    this.selectFilm = this.selectFilm.bind(this);
+  }
+
+  selectFilm () {
+    console.log(this.props, 'la');
+    
+    this.props.selectFilm(this.props.film.id);
   }
 
   render() {
+    const { film } = this.props;
+    const filmGenre = film.genres.join(', ');   
+    
     return (
       <ErrorBoundary>
         <div className="film-preview-card">
-          <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQA_-tL18_rj9zEcjN6n41NEaJm-kRNF9UeOtvksZ4z_OW6jRA9" alt="" />
+          <Link 
+            onClick={this.selectFilm}
+            to={`/film/${film.id}`}>
+              <img src={film.poster_path} alt="" />
+          </Link>
           <div className="film-caption">
             <div className="card-caption-wrapper">
-              <span className="film-name">Kill Bill</span>
-              <span className="film-year">2004</span>
+              <span className="film-name">{film.title}</span>
+              <span className="film-year">{film.release_date}</span>
             </div>
-            <span className="film-genre">Action & Adventure</span>
+            <span className="film-genre">{filmGenre}</span>
           </div>
         </div>
       </ErrorBoundary>

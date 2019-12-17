@@ -1,14 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.component';
 
-class Header extends React.Component {
+class FilmDescription extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
+    const { film } = this.props;
+    
     return (
       <ErrorBoundary>
         <section className="chosen-film">
@@ -18,19 +21,19 @@ class Header extends React.Component {
             </Link>
           </div>
           <div className="film-details-wrapper">
-            <img className="film-image" src="http://t2.gstatic.com/images?q=tbn:ANd9GcQA_-tL18_rj9zEcjN6n41NEaJm-kRNF9UeOtvksZ4z_OW6jRA9" alt="" />
+            <img className="film-image" src={film.poster_path} alt="" />
             <div className="film-details">
               <div className="film-name-rating-wrapper">
-                <span className="film-name">Kill Bill: Vol 2</span>
-                <span className="film-rating">4.3</span>
+                <span className="film-name">{film.title}</span>
+                <span className="film-rating">{film.vote_average}</span>
               </div>
               <span className="film-awards">Oscar winning Movie</span>
               <div className="film-name-year-duration">
-                <span className="film-year">1994 year</span>
-                <span className="film-duration">154 min</span>
+                <span className="film-year">{film.release_date}</span>
+                <span className="film-duration">{film.runtime} min</span>
               </div>
               <div className="film-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos nobis cupiditate sint amet, ea autem voluptates expedita, vel exercitationem illum distinctio totam consequatur facilis id tempora voluptatibus assumenda ex.
+                {film.overview}
               </div>
             </div>
           </div>
@@ -40,4 +43,15 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+FilmDescription.propTypes = {
+  selectedFilm: PropTypes.object,
+};
+
+const mapStateToProps = state => ({
+  film: state.selectedFilm,
+});
+
+const mapDispatchToProps = {
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilmDescription);

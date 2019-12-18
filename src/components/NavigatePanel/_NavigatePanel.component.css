@@ -1,0 +1,12 @@
+.navigate-panel {
+  height: 70px;
+  padding: 0 120px;
+  background: #555555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigate-panel .radio-wrapper {
+  align-self: auto;
+}

@@ -1,0 +1,36 @@
+<div class="header-wrap">
+  <div class="logo-wrap">
+    <div>
+      <input type="checkbox" name="AgregationLOgo" id="AgregationLOgo">
+      <label for="AgregationLOgo">Agregation Logo</label>
+    </div>
+    <div>
+      <span>User login</span>
+      <button [routerLink]="['/Contact']">Log out</button>
+    </div>
+  </div>
+  <div class="source-title">{{ sourceName }}</div>
+  <div class="nav-bar">
+    <select name="" id="">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <div class="filter-wrap">
+      <input type="text" placeholder="Filter by...">
+      <app-gray-button
+        [routerLink]="['/404']"
+        buttonTitle = "Filter"
+      ></app-gray-button>
+    </div>
+    <div>
+      <input type="checkbox" name="selfCreated" id="selfCreated">
+      <label for="selfCreated">Only created by me</label>
+    </div>
+    <app-gray-button
+      [routerLink]="['/404']"
+      buttonTitle = "Add Article"
+    ></app-gray-button>
+  </div>
+</div>

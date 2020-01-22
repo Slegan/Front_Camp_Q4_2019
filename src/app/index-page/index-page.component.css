@@ -1,0 +1,14 @@
+.main-view {
+  display: flex;
+}
+
+.app-sidebar {
+  width: 20%;
+}
+
+.app-mainbox {
+  width: 80%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}

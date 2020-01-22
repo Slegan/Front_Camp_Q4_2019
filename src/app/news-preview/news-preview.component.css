@@ -1,0 +1,38 @@
+.news-previw-wrap {
+  display: flex;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.news-picture {
+  height: 70px;
+  width: 70px;
+  display: block;
+  border: 1px solid black;
+}
+
+.news-description-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.news-description {
+  margin: 0;
+  padding: 0;
+  height: 35px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.news-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}

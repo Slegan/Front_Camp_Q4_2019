@@ -6,7 +6,7 @@
     </div>
     <div>
       <span>User login</span>
-      <button>Log out</button>
+      <button [routerLink]="['/Contact']">Log out</button>
     </div>
   </div>
   <div class="source-title">{{ sourceName }}</div>
@@ -17,7 +17,7 @@
       <option value="3">3</option>
       <option value="4">4</option>
     </select>
-    <div>
+    <div class="filter-wrap">
       <input type="text" placeholder="Filter by...">
       <app-gray-button
         [routerLink]="['/404']"

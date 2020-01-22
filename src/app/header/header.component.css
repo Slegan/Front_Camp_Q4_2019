@@ -27,3 +27,8 @@
   margin-top: -1px;
   align-items: center;
 }
+
+.filter-wrap {
+  display: flex;
+  align-items: center;
+}

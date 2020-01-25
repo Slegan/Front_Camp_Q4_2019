@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-// import { news } from '../news';
+import { News } from '../news/news'
 
 @Component({
   selector: 'app-news-preview',
@@ -9,16 +9,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./news-preview.component.css']
 })
 export class NewsPreviewComponent implements OnInit {
+  @Input() post: News;
   buttonTitle: string;
-
+  publishDay: number;
+  publishMonth: number;
+  publishYear: number;
   constructor(
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    // this.route.paramMap.subscribe(params => {
-    //   this.news = news[+params.get('newsId')];
-    // });
+    const date = new Date(this.post.publishedAt);
+    this.publishDay = date.getDay();
+    this.publishMonth = date.getMonth();
+    this.publishYear = date.getFullYear();
   }
 
 }

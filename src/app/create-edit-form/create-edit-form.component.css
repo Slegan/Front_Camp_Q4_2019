@@ -1,0 +1,39 @@
+.create-edit-form {
+  display: flex;
+  width: 60%;
+  margin: 20px auto;
+  border: 1px solid black;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.form-left-column {
+  
+}
+
+.form-right-column {
+
+}
+
+.form-control-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: none;
+}
+
+.form-buttons-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-button {
+  background: #CCC;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  width: 70px;
+}

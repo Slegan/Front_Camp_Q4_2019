@@ -4,11 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexPageComponent } from './index-page/index-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { SelfPresentationComponent } from './self-presentation/self-presentation.component';
+import { NewsDetailsPageComponent } from './news-details-page/news-details-page.component';
+import { CreateEditPageComponent } from './create-edit-page/create-edit-page.component';
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/Main', pathMatch: 'full' },
   { path: 'Main', component: IndexPageComponent },
   { path: 'Contact',   component: SelfPresentationComponent },
+  { path: 'news/:title',   component: NewsDetailsPageComponent },
+  { path: 'Create',   component: CreateEditPageComponent },
+  { path: 'Edit/:title',   component: CreateEditPageComponent },
   { path: '**', component: NotFoundPageComponent }
 ];
 

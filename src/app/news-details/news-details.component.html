@@ -1,1 +1,30 @@
-<p>news-details works!</p>
+<div class="news-detail_previw-wrap">
+  <div>
+    <img class="news-detail_picture" src="{{post.urlToImage}}" alt="">
+  </div>
+  <div class="news-detail_description-wrap">
+    <span class="news-detail_title">{{ post.title }}</span>
+    <p class="news-detail_description">
+      {{ post.content }}
+    </p>
+    <div class="news-detail_creation-time">
+      {{publishDay}}/{{publishMonth}}/{{publishYear}}
+    </div>
+    <div>
+      {{ post.author }}
+    </div>
+    <a href="{{post.url}}">
+      See origin post
+    </a>
+  </div>
+  <div class="news-detail_actions">
+    <app-gray-button
+      buttonTitle = "Edit"
+      [routerLink]="['/Edit', post.title]"
+    ></app-gray-button>
+    <app-gray-button
+      buttonTitle = "Delete"
+      (click)=logDelete()
+    ></app-gray-button>
+  </div>
+</div>

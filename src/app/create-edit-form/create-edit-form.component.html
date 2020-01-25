@@ -1,0 +1,62 @@
+<div>
+  <form [formGroup]="newsForm" class="create-edit-form">
+    <div class="form-left-column">
+      <div class="form-control-wrap">
+        <label for="heading">
+          Heading
+        </label>
+        <input id="heading" type="text" formControlName="heading">
+      </div>
+      <div class="form-control-wrap">
+        <label for="description">
+          Short description
+        </label>
+        <input id="description" type="text" formControlName="description">
+      </div>
+      <div class="form-control-wrap">
+        <label for="content">
+          Content
+        </label>
+        <textarea name="content" formControlName="content" id="content" cols="25" rows="7"></textarea>
+      </div>
+    </div>
+    <div class="form-right-column">
+      <div class="form-control-wrap">
+        <label for="img">
+          Image
+        </label>
+        <input id="img" type="text" formControlName="img">
+      </div>
+      <div class="form-control-wrap">
+        <label for="date">
+          Date
+        </label>
+        <input id="date" type="text" formControlName="date">
+      </div>
+      <div class="form-control-wrap">
+        <label for="author">
+          Author
+        </label>
+        <input id="author" type="text" formControlName="author">
+      </div>
+      <div class="form-control-wrap">
+        <label for="source">
+          Source URL
+        </label>
+        <input id="source" type="text" formControlName="source">
+      </div>
+      <div class="form-buttons-wrap">
+        <button
+          class="form-button"
+          type="submit"
+          (click)=logSave()
+        >Save</button>
+        <button
+          class="form-button"
+          type="reset"
+          (click)=logCancel()
+        >Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

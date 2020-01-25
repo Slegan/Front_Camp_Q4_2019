@@ -1,21 +1,24 @@
 <div class="news-previw-wrap">
   <div>
-    <img class="news-picture" src="" alt="">
+    <img class="news-picture" src="{{post.urlToImage}}" alt="">
   </div>
   <div class="news-description-wrap">
     <div>
-      <span>Newsline</span>
-      <p class="news-description" maxlen>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A ipsa, nesciunt, tempora fuga optio in laborum ullam neque deleniti autem necessitatibus, laboriosam at voluptates suscipit totam vitae? Eveniet, placeat ipsam!</p>
+      <span class="news-title">{{ post.title }}</span>
+      <p class="news-description">{{ post.description }}</p>
       <a href=""
-        [routerLink]="['/news', newsId]"
+        [routerLink]="['/news', post.title]"
       >Read more...</a>
     </div>
     <div class="news-creation-time">
-      dd/mm/yy
+      {{publishDay}}/{{publishMonth}}/{{publishYear}}
     </div>
   </div>
   <div class="news-actions">
-    <app-gray-button buttonTitle = "Edit"></app-gray-button>
+    <app-gray-button
+      buttonTitle = "Edit"
+      [routerLink]="['/Edit', post.title]"
+    ></app-gray-button>
     <app-gray-button buttonTitle = "Delete"></app-gray-button>
   </div>
 </div>

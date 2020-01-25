@@ -12,6 +12,10 @@
   border: 1px solid black;
 }
 
+.news-title {
+  font-weight: 700;
+}
+
 .news-description-wrap {
   display: flex;
   justify-content: space-between;

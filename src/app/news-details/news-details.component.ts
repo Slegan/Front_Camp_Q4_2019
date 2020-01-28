@@ -11,9 +11,6 @@ import { News } from '../news/news';
 })
 export class NewsDetailsComponent implements OnInit {
   post: News;
-  publishDay: number;
-  publishMonth: number;
-  publishYear: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,10 +19,6 @@ export class NewsDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.post = this.service.getPost(this.route.snapshot.params.title);
-    const date = new Date(this.post.publishedAt);
-    this.publishDay = date.getDay();
-    this.publishMonth = date.getMonth();
-    this.publishYear = date.getFullYear();
   }
 
   

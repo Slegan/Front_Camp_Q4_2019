@@ -8,7 +8,7 @@
       {{ post.content }}
     </p>
     <div class="news-detail_creation-time">
-      {{publishDay}}/{{publishMonth}}/{{publishYear}}
+      <app-date-pipe date={{post.publishedAt}}></app-date-pipe>
     </div>
     <div>
       {{ post.author }}
@@ -17,14 +17,14 @@
       See origin post
     </a>
   </div>
-  <div class="news-detail_actions">
+  <div class="news-detail_actions" *ngIf=post.custom>
     <app-gray-button
       buttonTitle = "Edit"
-      [routerLink]="['/Edit', post.title]"
+      [routerLink] = "['/Edit', post.title]"
     ></app-gray-button>
     <app-gray-button
       buttonTitle = "Delete"
-      (click)=logDelete()
+      (click) = logDelete()
     ></app-gray-button>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="header-wrap">
   <div class="logo-wrap">
     <div>
-      <span for="Logo"> Logo</span>
+      <span for="Logo">Logo</span>
     </div>
     <div>
       <span>User login</span>
@@ -10,11 +10,12 @@
   </div>
   <div class="source-title">{{ sourceName }}</div>
   <div class="nav-bar" *ngIf="isMainPage">
-    <select name="" id="">
-      <option value="All source">All source</option>
+    <select name="" #channelSelect (change)="selectChannel(channelSelect.value)">
+      <option value="epmty" disabled></option>
+      <option value="top-headlines">All source</option>
       <option
-        *ngFor="let channel of channels$ | async"
-        value="channel.name"
+        *ngFor="let channel of listOfSource"
+        value="{{channel.id}}"
       >
         {{ channel.name }}
       </option>

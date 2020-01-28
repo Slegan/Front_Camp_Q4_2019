@@ -17,8 +17,11 @@ export class MainboxComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.news$ = this.service.getNews();
-    console.log(this.news$);
+    this.service.getNews();
+  }
+
+  ngDoCheck() {
+    this.news$ = this.service.returnCollection();
   }
 
 }

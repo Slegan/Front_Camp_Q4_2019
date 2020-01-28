@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,6 +18,8 @@ import { GrayButtonComponent } from './gray-button/gray-button.component';
 import { NewsDetailsPageComponent } from './news-details-page/news-details-page.component';
 import { CreateEditPageComponent } from './create-edit-page/create-edit-page.component';
 import { CreateEditFormComponent } from './create-edit-form/create-edit-form.component';
+import { DatePipeComponent } from './date-pipe/date-pipe.component';
+import { CustomFilterPipe } from './custom-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -32,12 +35,15 @@ import { CreateEditFormComponent } from './create-edit-form/create-edit-form.com
     GrayButtonComponent,
     NewsDetailsPageComponent,
     CreateEditPageComponent,
-    CreateEditFormComponent
+    CreateEditFormComponent,
+    DatePipeComponent,
+    CustomFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
   ],
   providers: [],

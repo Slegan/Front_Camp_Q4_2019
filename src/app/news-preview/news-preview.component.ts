@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
+import { NewsService }  from '../news/news.service';
 import { News } from '../news/news'
 
 @Component({
@@ -11,18 +11,16 @@ import { News } from '../news/news'
 export class NewsPreviewComponent implements OnInit {
   @Input() post: News;
   buttonTitle: string;
-  publishDay: number;
-  publishMonth: number;
-  publishYear: number;
+
   constructor(
-    private route: ActivatedRoute,
+    private service: NewsService
   ) { }
 
   ngOnInit() {
-    const date = new Date(this.post.publishedAt);
-    this.publishDay = date.getDay();
-    this.publishMonth = date.getMonth();
-    this.publishYear = date.getFullYear();
+  }
+
+  deletePost():void {
+    this.service.deletePost(this.post);
   }
 
 }

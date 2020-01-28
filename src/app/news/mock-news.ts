@@ -6,6 +6,7 @@ export const NEWS: News[] = [
       "id": null,
       "name": "Forbes.com"
     },
+    "custom": true,
     "author": "Billy Bambrough, Contributor, Billy Bambrough, Contributor https://www.forbes.com/sites/billybambrough/",
     "title": "There’s Something Very Strange Going On With Bitcoin Exchange LocalBitcoins",
     "description": "Bitcoin exchange LocalBitcoins, often used as a gauge of bitcoin interest and prices around the world, has suddenly begun suspending long-time users' accounts without warning...",
@@ -19,6 +20,7 @@ export const NEWS: News[] = [
       "id": null,
       "name": "Bitcoinist.com"
     },
+    "custom": true,
     "author": "Emilio Janus",
     "title": "Bitcoin is the Most Popular Crypto Asset Amongst Investors",
     "description": "The Bitcoin and crypto market cap figures that we get from CoinMarketCap, whilst being infinitely more reliable than its data on daily volumes, just tell us how much of each particular cryptocurrency is out there. But with vast swathes of these tokens being h…",
@@ -33,6 +35,7 @@ export const NEWS: News[] = [
       "name": "Bitcoinexchangeguide.com"
     },
     "author": null,
+    "custom": true,
     "title": "Threat Intelligence Cybersecurity Expert Shares Stance on Blockchain's Risks and Future",
     "description": "Carl is a legend in cryptocurrency space for his long-storied experience, history and insights. He is a digital nomad who fell in love with bitcoin and its offspring for many years now and prides himself on delivering quality perspectives in the emerging worl…",
     "url": "https://bitcoinexchangeguide.com/threat-intelligence-cybersecurity-expert-shares-stance-on-blockchains-risks-and-future/",
@@ -45,6 +48,7 @@ export const NEWS: News[] = [
       "id": null,
       "name": "Cointelegraph.com"
     },
+    "custom": true,
     "author": "Cointelegraph By William Suberg",
     "title": "Bitcoin ‘Needs More’ PR from People Like Peter Schiff: Binance CEO",
     "description": "Fresh from his dubious week in the spotlight after claiming to “lose” his BTC holdings, Schiff is still saying Bitcoin investors are blind to gold’s benefits",
@@ -58,6 +62,7 @@ export const NEWS: News[] = [
       "id": null,
       "name": "Slashdot.org"
     },
+    "custom": true,
     "author": "feedfeeder",
     "title": "Tesla Cybertruck spied filming segment for Jay Leno’s Garage with Elon Musk - Teslarati",
     "description": "Tesla Cybertruck spied filming segment for Jay Leno’s Garage with Elon MuskTeslarati Elon Musk Opens Up on Bitcoin, FinallyBitcoinist Volkswagen CEO says he can catch up to Tesla and ‘probably overtake’ themElectrek Tesla's stock price has skyrocketed. Is the…",
@@ -71,6 +76,7 @@ export const NEWS: News[] = [
       "id": "usa-today",
       "name": "USA Today"
     },
+    "custom": true,
     "author": "USA TODAY, Jessica Menton, USA TODAY",
     "title": "Banks, Bitcoin, bond funds: Where is your money safe in an era of cyberattacks?",
     "description": "Safeguarding your nest egg is complicated in today's digital age. Where is your money protected if cybercrooks hack your account or if a bank fails?",
@@ -84,6 +90,7 @@ export const NEWS: News[] = [
       "id": null,
       "name": "Lowendbox.com"
     },
+    "custom": true,
     "author": "Frank Williams",
     "title": "WindowsVPS.Host – VPS plans starting at $5.50 and Windows VPS Reseller Plans!",
     "description": "WindowsVPS.Host has contacted us with more offers specifically targeted for Lowendbox visitors with special discounts. They have VPS offers starting at $5.50 a month and Windows VPS Reseller plans starting at $50 a month. In their own words, about their packa…",
@@ -93,3 +100,5 @@ export const NEWS: News[] = [
     "content": "WindowsVPS.Host has contacted us with more offers specifically targeted for Lowendbox visitors with special discounts.They have VPS offers starting at $5.50 a month and Windows VPS Reseller plans starting at $50 a month.In their own words, about their package… [+3273 chars]"
   },
 ];
+
+export const state: News[] = [];

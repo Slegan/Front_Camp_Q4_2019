@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { NewsService }  from '../news/news.service';
 import { News } from '../news/news';
@@ -12,6 +12,7 @@ import { News } from '../news/news';
 })
 export class CreateEditFormComponent implements OnInit{
   newsForm;
+  isCreate: boolean ;
   post: News;
   publishDay: number;
   publishMonth: number;
@@ -20,20 +21,22 @@ export class CreateEditFormComponent implements OnInit{
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
+    private router: Router,
     private service: NewsService
   ) {
     this.newsForm = this.formBuilder.group({
-      heading: '',
+      title: '',
       description: '',
       content: '',
-      img: '',
+      urlToImage: '',
       date: '',
       author: '',
-      source: '',
+      url: '',
     });
   }
 
   ngOnInit() {
+    this.isCreate = (this.route.snapshot.routeConfig.path === 'Create');
     this.post = this.service.getPost(this.route.snapshot.params.title);
     if (this.post) {
       const date = new Date(this.post.publishedAt);
@@ -41,23 +44,26 @@ export class CreateEditFormComponent implements OnInit{
       this.publishMonth = date.getMonth();
       this.publishYear = date.getFullYear();
       this.newsForm = this.formBuilder.group({
-        heading: this.post.title,
+        title: this.post.title,
         description: this.post.description,
         content: this.post.content,
-        img: this.post.urlToImage,
+        urlToImage: this.post.urlToImage,
         date: `${this.publishDay}/${this.publishMonth}/${this.publishYear}`,
         author: this.post.author,
-        source: this.post.url,
+        url: this.post.url,
       });
     }
-    console.log(this.post);
   }
 
   logSave(): void {
-    console.log('Save function coming soon');
+    this.newsForm.value.source = {'id': null, 'name': 'myCustomNews.org'};
+    this.newsForm.value.custom = true;
+    this.service.addPost(this.newsForm.value);
+    this.router.navigate(['/Main']);
   }
 
   logCancel(): void {
-    console.log('Cancel function coming soon');
+    this.service.addPost(this.post);
+    this.router.navigate(['/Main']);
   }
 }

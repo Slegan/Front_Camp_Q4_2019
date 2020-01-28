@@ -8,11 +8,11 @@
 }
 
 .form-left-column {
-  
+  width: 45%;
 }
 
 .form-right-column {
-
+  width: 45%;
 }
 
 .form-control-wrap {

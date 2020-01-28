@@ -12,4 +12,5 @@ export class News {
   urlToImage: string;
   publishedAt: string;
   content: string;
+  custom?: boolean;
 }

@@ -6,19 +6,22 @@
     <div>
       <span class="news-title">{{ post.title }}</span>
       <p class="news-description">{{ post.description }}</p>
-      <a href=""
-        [routerLink]="['/news', post.title]"
+      <a href = ""
+        [routerLink] = "['/news', post.title]"
       >Read more...</a>
     </div>
     <div class="news-creation-time">
-      {{publishDay}}/{{publishMonth}}/{{publishYear}}
+      <app-date-pipe date={{post.publishedAt}}></app-date-pipe>
     </div>
   </div>
-  <div class="news-actions">
+  <div class="news-actions" *ngIf=post.custom>
     <app-gray-button
       buttonTitle = "Edit"
-      [routerLink]="['/Edit', post.title]"
+      [routerLink] = "['/Edit', post.title]"
     ></app-gray-button>
-    <app-gray-button buttonTitle = "Delete"></app-gray-button>
+    <app-gray-button
+      buttonTitle = "Delete"
+      (click) = deletePost();
+    ></app-gray-button>
   </div>
 </div>

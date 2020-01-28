@@ -2,16 +2,16 @@
   <form [formGroup]="newsForm" class="create-edit-form">
     <div class="form-left-column">
       <div class="form-control-wrap">
-        <label for="heading">
+        <label for="title">
           Heading
         </label>
-        <input id="heading" type="text" formControlName="heading">
+        <input id="title" type="text" formControlName="title" required>
       </div>
       <div class="form-control-wrap">
         <label for="description">
           Short description
         </label>
-        <input id="description" type="text" formControlName="description">
+        <input id="description" type="text" formControlName="description" required>
       </div>
       <div class="form-control-wrap">
         <label for="content">
@@ -22,10 +22,10 @@
     </div>
     <div class="form-right-column">
       <div class="form-control-wrap">
-        <label for="img">
+        <label for="urlToImage">
           Image
         </label>
-        <input id="img" type="text" formControlName="img">
+        <input id="urlToImage" type="text" formControlName="urlToImage">
       </div>
       <div class="form-control-wrap">
         <label for="date">
@@ -40,17 +40,18 @@
         <input id="author" type="text" formControlName="author">
       </div>
       <div class="form-control-wrap">
-        <label for="source">
+        <label for="url">
           Source URL
         </label>
-        <input id="source" type="text" formControlName="source">
+        <input id="url" type="text" formControlName="url">
       </div>
       <div class="form-buttons-wrap">
         <button
           class="form-button"
           type="submit"
           (click)=logSave()
-        >Save</button>
+          [disabled]="!newsForm.valid"
+        >{{isCreate ? 'Create' : 'Save'}}</button>
         <button
           class="form-button"
           type="reset"

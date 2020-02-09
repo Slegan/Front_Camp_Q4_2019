@@ -44,7 +44,6 @@ import { CustomFilterPipe } from './custom-filter.pipe';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
